@@ -52,7 +52,7 @@ ID	STATUS
 // **************************INNER JOINS **************************************
 
 val innerJoin=person.col("GRADUATE_PROGRAM") === graduateProgram.col("ID")
-//person.join(graduateProgram,innerJoin).show()
+person.join(graduateProgram,innerJoin).show()
 
 /* ouput inner join
 2019-10-10 23:39:45 INFO  DAGScheduler:54 - Job 4 finished: show at DataSet.scala:32, took 0.062486 s
@@ -71,7 +71,7 @@ val innerJoin=person.col("GRADUATE_PROGRAM") === graduateProgram.col("ID")
 val jointype="outer"
 
 val outerjoin=person.col("GRADUATE_PROGRAM")===graduateProgram.col("ID")
-//person.join(graduateProgram,outerjoin,jointype).show()
+person.join(graduateProgram,outerjoin,jointype).show()
 /*
 
 +----+-------+----------------+------------+----+------+----------+-----------+
@@ -90,7 +90,7 @@ val outerjoin=person.col("GRADUATE_PROGRAM")===graduateProgram.col("ID")
 
 val joinType="left_outer"
 val leftOuterJoin=person.col("GRADUATE_PROGRAM")===graduateProgram.col("ID")
-//graduateProgram.join(person,leftOuterJoin,joinType).show()
+graduateProgram.join(person,leftOuterJoin,joinType).show()
 /*
 +---+------+----------+-----------+----+-------+----------------+------------+
 | ID|DEGREE|DEPARTMENT|     SCHOOL|  ID|   NAME|GRADUATE_PROGRAM|SPARK_STATUS|
@@ -106,7 +106,7 @@ val leftOuterJoin=person.col("GRADUATE_PROGRAM")===graduateProgram.col("ID")
 
 val joinType1="right_outer"
 val rightOuterJoin=person.col("GRADUATE_PROGRAM")===graduateProgram.col("ID")
-//person.join(graduateProgram,rightOuterJoin,joinType1).show()
+person.join(graduateProgram,rightOuterJoin,joinType1).show()
 
 /*
 +----+-------+----------------+------------+---+------+----------+-----------+
@@ -125,7 +125,7 @@ val rightOuterJoin=person.col("GRADUATE_PROGRAM")===graduateProgram.col("ID")
 
 val joinType2="left_semi"
 val leftSemiJoin=person.col("GRADUATE_PROGRAM")===graduateProgram.col("ID")
-//graduateProgram.join(person,leftSemiJoin,joinType2).show()
+graduateProgram.join(person,leftSemiJoin,joinType2).show()
 
 /*
 +---+------+----------+-----------+
@@ -141,7 +141,7 @@ val leftSemiJoin=person.col("GRADUATE_PROGRAM")===graduateProgram.col("ID")
 
 val joinType3="left_anti"
 val leftAntiJoin=person.col("GRADUATE_PROGRAM")===graduateProgram.col("ID")
-//graduateProgram.join(person,leftAntiJoin,joinType3).show()
+graduateProgram.join(person,leftAntiJoin,joinType3).show()
 
 /*
 +---+------+----------+------+
@@ -157,7 +157,7 @@ val leftAntiJoin=person.col("GRADUATE_PROGRAM")===graduateProgram.col("ID")
 
 val joinType4="cross"
 val crossJoin=person.col("GRADUATE_PROGRAM")===graduateProgram.col("ID")
-//person.join(graduateProgram,crossJoin,joinType4).show()
+person.join(graduateProgram,crossJoin,joinType4).show()
 person.crossJoin(graduateProgram).show()
 
 /*
